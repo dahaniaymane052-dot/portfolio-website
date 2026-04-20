@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayoub Digital — Sites Web & Chatbots IA pour Commerçants Marocains</title>
+<meta name="description" content="Freelance digital au Maroc. Je conçois des sites web et chatbots IA pour restaurants, boutiques et salons. Résultats concrets, prix juste.">
+
+<!-- Fonts: Fraunces (display editorial) + Manrope (body) + Noto Kufi Arabic -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,900;1,9..144,400&family=Manrope:wght@300;400;500;700&family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0E0D0B;
+  --bg-soft: #17140F;
+  --ink: #F5EFE4;
+  --ink-soft: #A39B8C;
+  --accent: #E8552C;
+  --accent-2: #D9A441;
+  --line: rgba(245, 239, 228, 0.12);
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Manrope', system-ui, sans-serif;
+  --arabic: 'Noto Kufi Arabic', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 100;
+  mix-blend-mode: overlay;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ====== NAVIGATION ====== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(12px);
+  background: rgba(14, 13, 11, 0.7);
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+}
+
+.nav-cta {
+  background: var(--accent);
+  color: var(--bg);
+  padding: 12px 24px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 85, 44, 0.3);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--ink);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ====== HERO ====== */
+.hero {
+  min-height: 100vh;
+  padding: 160px 0 80px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+}
+
+.hero-circle-1 {
+  width: 500px;
+  height: 500px;
+  background: var(--accent);
+  top: -100px;
+  right: -100px;
+  animation: float 20s ease-in-out infinite;
+}
+
+.hero-circle-2 {
+  width: 400px;
+  height: 400px;
+  background: var(--accent-2);
+  bottom: 10%;
+  left: -150px;
+  animation: float 25s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(50px, -30px); }
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  z-index: 1;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(232, 85, 44, 0.1);
+  border: 1px solid rgba(232, 85, 44, 0.3);
+  border-radius: 100px;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 40px;
+  animation: slideUp 0.8s ease-out;
+}
+
+.hero-tag .dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+h1.hero-title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(48px, 9vw, 128px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin-bottom: 40px;
+  animation: slideUp 1s ease-out 0.2s backwards;
+}
+
+h1.hero-title .highlight {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--accent);
+  position: relative;
+  display: inline-block;
+}
+
+h1.hero-title .highlight::before {
+  content: '';
+  position: absolute;
+  bottom: 0.05em;
+  left: -0.1em;
+  right: -0.1em;
+  height: 0.15em;
+  background: rgba(232, 85, 44, 0.2);
+  z-index: -1;
+}
+
+h1.hero-title .arabic {
+  font-family: var(--arabic);
+  font-weight: 700;
+  font-size: 0.7em;
+  color: var(--accent-2);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-subtitle {
+  font-size: clamp(16px, 1.8vw, 20px);
+  color: var(--ink-soft);
+  max-width: 600px;
+  margin-bottom: 48px;
+  line-height: 1.7;
+  animation: slideUp 1s ease-out 0.4s backwards;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: slideUp 1s ease-out 0.6s backwards;
+}
+
+.btn {
+  padding: 18px 36px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(232, 85, 44, 0.4);
+}
+
+.btn-ghost {
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.btn-ghost:hover {
+  border-color: var(--ink);
+  background: var(--bg-soft);
+}
+
+.btn-arrow {
+  transition: transform 0.3s;
+}
+
+.btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Hero stats */
+.hero-stats {
+  display: flex;
+  gap: 60px;
+  margin-top: 120px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+  animation: slideUp 1s ease-out 0.8s backwards;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 48px;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 8px;
+}
+
+/* ====== MARQUEE ====== */
+.marquee {
+  padding: 40px 0;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-soft);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 60px;
+  animation: scroll 30s linear infinite;
+  white-space: nowrap;
+}
+
+.marquee-item {
+  font-family: var(--serif);
+  font-size: clamp(32px, 5vw, 72px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.marquee-item::after {
+  content: '✦';
+  color: var(--accent);
+  font-style: normal;
+  font-size: 0.6em;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ====== SERVICES ====== */
+section {
+  padding: 120px 0;
+  position: relative;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.section-label::before {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(36px, 5vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  max-width: 800px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.section-intro {
+  font-size: 18px;
+  color: var(--ink-soft);
+  max-width: 600px;
+  margin-bottom: 80px;
+  line-height: 1.7;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 48px 40px;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(232, 85, 44, 0.3);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-number {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--ink-soft);
+  letter-spacing: 0.2em;
+  margin-bottom: 32px;
+}
+
+.service-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(232, 85, 44, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  color: var(--accent);
+}
+
+.service-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.service-desc {
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.service-features {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+.service-features li {
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.service-features li::before {
+  content: '→';
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.service-price {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 20px;
+  color: var(--ink);
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.service-price strong {
+  font-weight: 900;
+  font-size: 32px;
+  color: var(--accent);
+}
+
+.service-price small {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-soft);
+  display: block;
+  margin-top: 4px;
+  letter-spacing: 0.05em;
+}
+
+/* ====== PORTFOLIO ====== */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.project {
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.4s;
+  min-height: 400px;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+}
+
+.project-1 {
+  grid-column: span 7;
+  background: linear-gradient(135deg, #3A1F14, #6B2E18);
+}
+
+.project-2 {
+  grid-column: span 5;
+  background: linear-gradient(135deg, #1E2F3F, #2C4257);
+}
+
+.project-3 {
+  grid-column: span 5;
+  background: linear-gradient(135deg, #2E1F3F, #4B2E5C);
+}
+
+.project-4 {
+  grid-column: span 7;
+  background: linear-gradient(135deg, #1F3A2E, #2C5A47);
+}
+
+.project-visual {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  opacity: 0.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 200px;
+  color: var(--ink);
+}
+
+.project-content {
+  position: relative;
+  z-index: 2;
+  max-width: 60%;
+}
+
+.project-category {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+}
+
+.project-name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.project-desc {
+  color: var(--ink-soft);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.project-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.project-tag {
+  font-size: 11px;
+  padding: 6px 12px;
+  background: rgba(245, 239, 228, 0.1);
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+}
+
+/* ====== PROCESS ====== */
+.process-section {
+  background: var(--bg-soft);
+}
+
+.process {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+.process::before {
+  content: '';
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  right: 32px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.step {
+  position: relative;
+}
+
+.step-number {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 24px;
+  color: var(--accent);
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.step-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.step-desc {
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ====== TESTIMONIALS ====== */
+.testimonial-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 60px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  position: relative;
+  text-align: center;
+}
+
+.quote-mark {
+  font-family: var(--serif);
+  font-size: 160px;
+  color: var(--accent);
+  line-height: 1;
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  opacity: 0.2;
+}
+
+.testimonial-text {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin-bottom: 48px;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.author-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 24px;
+  color: var(--bg);
+}
+
+.author-info {
+  text-align: left;
+}
+
+.author-name {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.author-role {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+
+/* ====== CTA SECTION ====== */
+.cta-section {
+  text-align: center;
+  padding: 160px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.cta-bg::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(232, 85, 44, 0.3) 0%, transparent 60%);
+  filter: blur(60px);
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(40px, 7vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+.cta-title em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.cta-subtitle {
+  font-size: 18px;
+  color: var(--ink-soft);
+  max-width: 500px;
+  margin: 0 auto 48px;
+  line-height: 1.7;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ====== FOOTER ====== */
+footer {
+  padding: 80px 0 40px;
+  border-top: 1px solid var(--line);
+  background: var(--bg-soft);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 60px;
+}
+
+.footer-brand h3 {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 32px;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.footer-brand p {
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 300px;
+}
+
+.footer-col h4 {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col li {
+  margin-bottom: 12px;
+}
+
+.footer-col a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-col a:hover {
+  color: var(--ink);
+}
+
+.footer-bottom {
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--ink-soft);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.social-links a:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+/* ====== CHATBOT FLOATING WIDGET ====== */
+.chatbot-widget {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 40;
+}
+
+.chatbot-toggle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(232, 85, 44, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg);
+  transition: transform 0.3s;
+  animation: bounce 3s ease-in-out infinite;
+}
+
+.chatbot-toggle:hover {
+  transform: scale(1.1);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.chatbot-panel {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 360px;
+  max-width: calc(100vw - 48px);
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+  transform-origin: bottom right;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.chatbot-panel.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.chatbot-header {
+  padding: 20px 24px;
+  background: var(--accent);
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chatbot-header-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-weight: 900;
+  color: var(--accent);
+}
+
+.chatbot-header-info h5 {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.chatbot-header-info p {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.chatbot-body {
+  padding: 24px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.chatbot-message {
+  background: var(--bg);
+  padding: 14px 18px;
+  border-radius: 18px;
+  border-top-left-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.chatbot-suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chatbot-suggestion {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  padding: 10px 16px;
+  border-radius: 100px;
+  text-align: right;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: inherit;
+}
+
+.chatbot-suggestion:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1024px) {
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project-1, .project-4 {
+    grid-column: span 12;
+  }
+  .project-2, .project-3 {
+    grid-column: span 6;
+  }
+  .process {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+  .process::before {
+    display: none;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  nav { padding: 16px 20px; }
+  .nav-links { display: none; }
+  .menu-toggle { display: block; }
+  
+  .hero { padding: 120px 0 60px; }
+  .hero-stats { gap: 32px; margin-top: 60px; }
+  .stat-number { font-size: 36px; }
+  
+  section { padding: 80px 0; }
+  
+  .services { grid-template-columns: 1fr; }
+  .project-1, .project-2, .project-3, .project-4 { grid-column: span 12; }
+  .project { min-height: 320px; padding: 32px; }
+  .project-visual { font-size: 120px; }
+  .project-content { max-width: 100%; }
+  
+  .process { grid-template-columns: 1fr; gap: 32px; }
+  
+  .testimonial-card { padding: 48px 32px; }
+  
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  
+  .chatbot-widget { bottom: 20px; right: 20px; }
+  .chatbot-panel { width: calc(100vw - 40px); right: -10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="logo">
+    <span class="logo-dot"></span>
+    Ayoub<span style="color: var(--accent);">.</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Projets</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Parlons-en →</a>
+  <button class="menu-toggle">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-circle hero-circle-1"></div>
+    <div class="hero-circle hero-circle-2"></div>
+  </div>
+  
+  <div class="container hero-inner">
+    <div class="hero-tag">
+      <span class="dot"></span>
+      Disponible pour nouveaux projets · Casablanca
+    </div>
+    
+    <h1 class="hero-title">
+      Je transforme<br>
+      les commerces<br>
+      <span class="highlight">marocains</span> en<br>
+      machines <span class="highlight">digitales</span>.
+    </h1>
+    
+    <p class="hero-subtitle">
+      Sites web modernes + chatbots IA intelligents pour restaurants, boutiques et services au Maroc. Résultats concrets, prix transparents, support en darija.
+    </p>
+    
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">
+        Démarrer mon projet
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="#work" class="btn btn-ghost">
+        Voir mes projets
+      </a>
+    </div>
+    
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-number">24+</div>
+        <div class="stat-label">Clients satisfaits</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">48h</div>
+        <div class="stat-label">Délai moyen</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">3x</div>
+        <div class="stat-label">Conversions moy.</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Support chatbot</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">Sites Web</span>
+    <span class="marquee-item">Chatbots IA</span>
+    <span class="marquee-item">E-commerce</span>
+    <span class="marquee-item">SEO Maroc</span>
+    <span class="marquee-item">WhatsApp Bot</span>
+    <span class="marquee-item">Design moderne</span>
+    <span class="marquee-item">Sites Web</span>
+    <span class="marquee-item">Chatbots IA</span>
+    <span class="marquee-item">E-commerce</span>
+    <span class="marquee-item">SEO Maroc</span>
+    <span class="marquee-item">WhatsApp Bot</span>
+    <span class="marquee-item">Design moderne</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-label">Services</div>
+    <h2 class="section-title">Tout ce dont votre business a besoin pour <em>exister en ligne</em>.</h2>
+    <p class="section-intro">Packages clairs, prix fixes, sans surprises. Paiement flexible adapté aux commerçants marocains.</p>
+    
+    <div class="services">
+      <!-- SERVICE 1 -->
+      <div class="service-card">
+        <div class="service-number">— 01</div>
+        <div class="service-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <line x1="3" y1="9" x2="21" y2="9"/>
+            <line x1="9" y1="21" x2="9" y2="9"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Site Web Vitrine</h3>
+        <p class="service-desc">Site professionnel, rapide et responsive. Google Maps, menu, réservations, tout intégré.</p>
+        <ul class="service-features">
+          <li>Design moderne sur-mesure</li>
+          <li>Responsive mobile parfait</li>
+          <li>SEO Maroc optimisé</li>
+          <li>Hébergement 1 an inclus</li>
+        </ul>
+        <div class="service-price">
+          <strong>2 500 DH</strong>
+          <small>À partir de · livraison 7 jours</small>
+        </div>
+      </div>
+      
+      <!-- SERVICE 2 (FEATURED) -->
+      <div class="service-card" style="border-color: rgba(232,85,44,0.4); background: linear-gradient(180deg, rgba(232,85,44,0.05), var(--bg-soft));">
+        <div class="service-number" style="color: var(--accent);">— 02 · POPULAIRE</div>
+        <div class="service-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            <circle cx="9" cy="10" r="1" fill="currentColor"/>
+            <circle cx="15" cy="10" r="1" fill="currentColor"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Site + Chatbot IA</h3>
+        <p class="service-desc">Pack complet : site web + assistant IA qui parle darija/français/arabe. Répond 24/7 à vos clients.</p>
+        <ul class="service-features">
+          <li>Tout le pack Vitrine</li>
+          <li>Chatbot IA multilingue</li>
+          <li>Réservations automatisées</li>
+          <li>Intégration WhatsApp</li>
+        </ul>
+        <div class="service-price">
+          <strong>4 500 DH</strong>
+          <small>Setup + 300 DH/mois</small>
+        </div>
+      </div>
+      
+      <!-- SERVICE 3 -->
+      <div class="service-card">
+        <div class="service-number">— 03</div>
+        <div class="service-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Chatbot Seul</h3>
+        <p class="service-desc">Vous avez déjà un site ? J'ajoute un chatbot IA intelligent en 48h. Script à intégrer facilement.</p>
+        <ul class="service-features">
+          <li>Prompt personnalisé</li>
+          <li>Installation sur votre site</li>
+          <li>Dashboard de gestion</li>
+          <li>Updates mensuels inclus</li>
+        </ul>
+        <div class="service-price">
+          <strong>1 500 DH</strong>
+          <small>Setup + 250 DH/mois</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="work" style="background: var(--bg-soft);">
+  <div class="container">
+    <div class="section-label">Projets récents</div>
+    <h2 class="section-title">Des commerces marocains qui <em>cartonnent</em> en ligne.</h2>
+    
+    <div class="portfolio-grid">
+      <div class="project project-1">
+        <div class="project-visual">ح</div>
+        <div class="project-content">
+          <div class="project-category">Restaurant · Casablanca</div>
+          <h3 class="project-name">Dar Hassan</h3>
+          <p class="project-desc">Site web + chatbot multilingue. +40% de réservations en 2 mois.</p>
+          <div class="project-tags">
+            <span class="project-tag">Next.js</span>
+            <span class="project-tag">Claude AI</span>
+            <span class="project-tag">Réservations</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project project-2">
+        <div class="project-visual">B</div>
+        <div class="project-content">
+          <div class="project-category">Boutique · Marrakech</div>
+          <h3 class="project-name">Berber Style</h3>
+          <p class="project-desc">E-commerce artisanat + bot WhatsApp pour commandes.</p>
+          <div class="project-tags">
+            <span class="project-tag">E-commerce</span>
+            <span class="project-tag">WhatsApp</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project project-3">
+        <div class="project-visual">ج</div>
+        <div class="project-content">
+          <div class="project-category">Salon · Rabat</div>
+          <h3 class="project-name">Jamila Beauty</h3>
+          <p class="project-desc">Prise de RDV automatisée. Instagram intégré.</p>
+          <div class="project-tags">
+            <span class="project-tag">RDV</span>
+            <span class="project-tag">Instagram</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project project-4">
+        <div class="project-visual">A</div>
+        <div class="project-content">
+          <div class="project-category">Épicerie fine · Tanger</div>
+          <h3 class="project-name">Atlas Gourmet</h3>
+          <p class="project-desc">Site vitrine + catalogue produits. Chatbot multilingue pour info produits & livraisons.</p>
+          <div class="project-tags">
+            <span class="project-tag">Catalogue</span>
+            <span class="project-tag">Chatbot</span>
+            <span class="project-tag">Livraison</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="process-section">
+  <div class="container">
+    <div class="section-label">Ma méthode</div>
+    <h2 class="section-title">De l'idée au site <em>en 7 jours</em>.</h2>
+    <p class="section-intro">Un process simple, transparent. Vous savez exactement où on en est, à chaque étape.</p>
+    
+    <div class="process">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h4 class="step-title">Découverte</h4>
+        <p class="step-desc">Appel gratuit de 30min. On parle de votre business, vos clients, vos objectifs.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h4 class="step-title">Design</h4>
+        <p class="step-desc">Je vous envoie une maquette en 48h. On ajuste jusqu'à ce que ce soit parfait.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h4 class="step-title">Développement</h4>
+        <p class="step-desc">Je code votre site + chatbot. Vous voyez l'avancement en temps réel.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h4 class="step-title">Lancement</h4>
+        <p class="step-desc">Mise en ligne + formation. Support inclus pendant 30 jours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section>
+  <div class="container">
+    <div class="testimonial-card">
+      <div class="quote-mark">"</div>
+      <p class="testimonial-text">
+        Depuis que mon restaurant a le chatbot, je ne perds plus aucune réservation. Les clients réservent même à 2h du matin. <em>C'est comme avoir un serveur qui ne dort jamais.</em>
+      </p>
+      <div class="testimonial-author">
+        <div class="author-avatar">H</div>
+        <div class="author-info">
+          <div class="author-name">Hassan El Amrani</div>
+          <div class="author-role">Propriétaire · Dar Hassan, Casablanca</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="container cta-inner">
+    <h2 class="cta-title">Votre business mérite<br>mieux qu'une <em>page Facebook</em>.</h2>
+    <p class="cta-subtitle">Discussion gratuite de 30 minutes. Je vous dis honnêtement si mon service peut vraiment vous aider.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/212600000000" class="btn btn-primary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <a href="mailto:contact@ayoub-digital.ma" class="btn btn-ghost">
+        contact@ayoub-digital.ma
+        <span class="btn-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Ayoub<span style="color: var(--accent);">.</span></h3>
+        <p>Freelance digital basé à Casablanca. Je crée des sites web et chatbots IA pour les commerces marocains qui veulent exister en ligne.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Sites web</a></li>
+          <li><a href="#">Chatbots IA</a></li>
+          <li><a href="#">E-commerce</a></li>
+          <li><a href="#">SEO Maroc</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Entreprise</h4>
+        <ul>
+          <li><a href="#">À propos</a></li>
+          <li><a href="#">Projets</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">+212 6 00 00 00 00</a></li>
+          <li><a href="#">contact@ayoub-digital.ma</a></li>
+          <li><a href="#">Casablanca, Maroc</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div>© 2026 Ayoub Digital. Tous droits réservés.</div>
+      <div class="social-links">
+        <a href="#" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING CHATBOT DEMO -->
+<div class="chatbot-widget">
+  <div class="chatbot-panel" id="chatPanel">
+    <div class="chatbot-header">
+      <div class="chatbot-header-avatar">A</div>
+      <div class="chatbot-header-info">
+        <h5>Assistant Ayoub</h5>
+        <p>● En ligne · Réponse instantanée</p>
+      </div>
+    </div>
+    <div class="chatbot-body">
+      <div class="chatbot-message">
+        👋 Salam! Ana l'assistant dyal Ayoub. Kifash nqdr n3awnk?
+      </div>
+      <div class="chatbot-suggestions">
+        <button class="chatbot-suggestion">💰 Ch7al kayswa site web?</button>
+        <button class="chatbot-suggestion">🤖 Kifash khdam l'chatbot?</button>
+        <button class="chatbot-suggestion">📞 Bghit nhdr m3a Ayoub</button>
+        <button class="chatbot-suggestion">📂 Chof projets dyalo</button>
+      </div>
+    </div>
+  </div>
+  <button class="chatbot-toggle" id="chatToggle" aria-label="Ouvrir le chat">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+  </button>
+</div>
+
+<script>
+  // Chatbot toggle
+  const toggle = document.getElementById('chatToggle');
+  const panel = document.getElementById('chatPanel');
+  toggle.addEventListener('click', () => {
+    panel.classList.toggle('active');
+  });
+  
+  // Smooth scroll for mobile
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+  
+  // Simple reveal on scroll
+  const reveal = (el) => {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    io.observe(el);
+  };
+  
+  document.querySelectorAll('.service-card, .project, .step, .testimonial-card').forEach(el => {
+    el.style.opacity = 0;
+    el.style.transform = 'translateY(40px)';
+    el.style.transition = 'all 0.8s cubic-bezier(0.22, 1, 0.36, 1)';
+    reveal(el);
+  });
+</script>
+
+</body>
+</html>
