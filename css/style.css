@@ -349,3 +349,191 @@ img {
         transform: translateY(-20px); 
     }
 }
+/* ============================================
+   ABOUT PAGE - SECTION ABOUT HERO
+   ============================================ */
+.about-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 70vh;
+    padding: 4rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 4rem;
+}
+
+.about-hero-content {
+    flex: 1;
+    animation: fadeInLeft 0.8s ease;
+}
+
+.about-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.about-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.2rem;
+    line-height: 1.8;
+}
+
+.about-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    animation: fadeInRight 0.8s ease;
+}
+
+.about-photo {
+    width: 320px;
+    height: 320px;
+    border-radius: 30px;
+    object-fit: cover;
+    border: 5px solid var(--accent);
+    box-shadow: var(--shadow);
+    transform: rotate(-3deg);
+    transition: transform 0.4s ease;
+}
+
+.about-photo:hover {
+    transform: rotate(0deg) scale(1.03);
+}
+
+/* ============================================
+   ABOUT PAGE - SECTION TIMELINE
+   ============================================ */
+.timeline-section {
+    padding: 5rem 5%;
+    background-color: var(--bg-secondary);
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 2rem;
+}
+
+/* Ligne verticale */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 2rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Points sur timeline */
+.timeline-dot {
+    position: absolute;
+    left: -2.6rem;
+    top: 0.5rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    border: 4px solid var(--bg-secondary);
+    box-shadow: 0 0 0 2px var(--accent);
+}
+
+.timeline-content {
+    background-color: var(--bg-primary);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow);
+}
+
+.timeline-date {
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+}
+
+.timeline-place {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+}
+
+.timeline-content p {
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   ABOUT PAGE - SECTION CENTRES D'INTÉRÊT
+   ============================================ */
+.interests-section {
+    padding: 5rem 5%;
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.interest-card {
+    background-color: var(--bg-primary);
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.interest-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow);
+}
+
+.interest-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.interest-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.interest-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
