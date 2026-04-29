@@ -39,3 +39,34 @@ themeToggle.addEventListener('click', () => {
 // MESSAGE CONSOLE (debug)
 // ============================================
 console.log('🚀 Portfolio chargé avec succès !');
+
+// ============================================
+// FILTRES DES PROJETS
+// ============================================
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+if (filterButtons.length > 0) {
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Retirer la classe "active" de tous les boutons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Ajouter "active" au bouton cliqué
+            button.classList.add('active');
+
+            // Récupérer le filtre choisi
+            const filter = button.getAttribute('data-filter');
+
+            // Parcourir tous les projets et les afficher/cacher
+            projectCards.forEach(card => {
+                const categories = card.getAttribute('data-category');
+                
+                if (filter === 'all' || categories.includes(filter)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+}

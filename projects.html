@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projets de Aymane Dahani - Développeur Web">
+    <title>Projets | Aymane</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ========== HEADER / NAVIGATION ========== -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">Aymane<span>.dev</span></a>
+
+            <button class="burger" id="burger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="skills.html">Compétences</a></li>
+                <li><a href="projects.html" class="active">Projets</a></li>
+                <li><a href="contact.html">Contacter-Moi</a></li>
+            </ul>
+
+            <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">🌙</button>
+        </nav>
+    </header>
+
+    <!-- ========== SECTION PROJECTS HERO ========== -->
+    <section class="projects-hero">
+        <p class="hero-greeting">Mes réalisations</p>
+        <h1 class="projects-main-title">Mes projets</h1>
+        <p class="projects-subtitle">
+            Voici une sélection de projets que j'ai réalisés pour mettre en pratique 
+            mes compétences en développement web.
+        </p>
+    </section>
+
+    <!-- ========== SECTION FILTRES ========== -->
+    <section class="filters-section">
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Tous</button>
+            <button class="filter-btn" data-filter="html-css">HTML/CSS</button>
+            <button class="filter-btn" data-filter="javascript">JavaScript</button>
+            <button class="filter-btn" data-filter="design">Web Design</button>
+        </div>
+    </section>
+
+    <!-- ========== SECTION PROJECTS GRID ========== -->
+    <section class="projects-section">
+        <div class="projects-grid">
+
+            <!-- Projet 1 : Portfolio (le projet actuel!) -->
+            <div class="project-card" data-category="html-css javascript design">
+                <div class="project-image">
+                    <div class="project-emoji">🎨</div>
+                </div>
+                <div class="project-content">
+                    <h3>Portfolio Personnel</h3>
+                    <p>Site web statique présentant mes compétences et projets. Responsive avec mode sombre.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <a href="https://github.com/dahaniaymane052-dot/portfolio-website" 
+                       target="_blank" 
+                       class="project-link">Voir sur GitHub →</a>
+                </div>
+            </div>
+
+            <!-- Projet 2 -->
+            <div class="project-card" data-category="html-css design">
+                <div class="project-image">
+                    <div class="project-emoji">🍔</div>
+                </div>
+                <div class="project-content">
+                    <h3>Site Restaurant</h3>
+                    <p>Site vitrine pour un restaurant fictif avec menu, galerie photos et réservation.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                    </div>
+                    <a href="#" class="project-link">Bientôt disponible →</a>
+                </div>
+            </div>
+
+            <!-- Projet 3 -->
+            <div class="project-card" data-category="javascript">
+                <div class="project-image">
+                    <div class="project-emoji">🎮</div>
+                </div>
+                <div class="project-content">
+                    <h3>Jeu Tic-Tac-Toe</h3>
+                    <p>Jeu de morpion classique en JavaScript avec gestion des tours et détection du gagnant.</p>
+                    <div class="project-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">DOM</span>
+                    </div>
+                    <a href="#" class="project-link">Bientôt disponible →</a>
+                </div>
+            </div>
+
+            <!-- Projet 4 -->
+            <div class="project-card" data-category="html-css">
+                <div class="project-image">
+                    <div class="project-emoji">📝</div>
+                </div>
+                <div class="project-content">
+                    <h3>CV en ligne</h3>
+                    <p>CV interactif et responsive présentant mon parcours et mes expériences.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                    </div>
+                    <a href="#" class="project-link">Bientôt disponible →</a>
+                </div>
+            </div>
+
+            <!-- Projet 5 -->
+            <div class="project-card" data-category="javascript">
+                <div class="project-image">
+                    <div class="project-emoji">🧮</div>
+                </div>
+                <div class="project-content">
+                    <h3>Calculatrice JS</h3>
+                    <p>Calculatrice fonctionnelle avec opérations de base et historique des calculs.</p>
+                    <div class="project-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">CSS3</span>
+                    </div>
+                    <a href="#" class="project-link">Bientôt disponible →</a>
+                </div>
+            </div>
+
+            <!-- Projet 6 -->
+            <div class="project-card" data-category="design html-css">
+                <div class="project-image">
+                    <div class="project-emoji">🌍</div>
+                </div>
+                <div class="project-content">
+                    <h3>Landing Page Voyage</h3>
+                    <p>Page d'accueil moderne pour un
