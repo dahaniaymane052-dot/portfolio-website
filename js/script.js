@@ -6,12 +6,14 @@ const navLinks = document.getElementById('navLinks');
 
 burger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
+    burger.classList.toggle('active'); // Pour animation X
 });
 
 // Fermer le menu quand on clique sur un lien
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
+        burger.classList.remove('active'); // Reset animation X
     });
 });
 

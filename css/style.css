@@ -1071,3 +1071,195 @@ img {
     display: block;
     animation: fadeInLeft 0.5s ease;
 }
+/* ============================================
+   ============================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   ============================================
+   ============================================ */
+
+/* ============================================
+   TABLETTE (max 968px)
+   ============================================ */
+@media (max-width: 968px) {
+
+    /* HERO (page accueil) */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+        padding: 3rem 5%;
+    }
+
+    .hero-name { font-size: 2.5rem; }
+    .hero-title { font-size: 1.8rem; }
+    .hero-buttons { justify-content: center; }
+    .hero-description { margin: 0 auto 2rem; }
+    .profile-photo { width: 280px; height: 280px; }
+
+    /* ABOUT HERO */
+    .about-hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .about-photo { width: 280px; height: 280px; }
+
+    /* CONTACT - 1 colonne au lieu de 2 */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    /* TIMELINE plus compacte */
+    .timeline { padding-left: 1.5rem; }
+    .timeline-item { padding-left: 1.5rem; }
+    .timeline-dot { left: -2rem; }
+}
+
+/* ============================================
+   MOBILE (max 768px)
+   ============================================ */
+@media (max-width: 768px) {
+
+    /* MENU BURGER affiché */
+    .burger { display: flex; }
+
+    /* Navigation cachée par défaut sur mobile */
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--bg-primary);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 3rem;
+        gap: 2rem;
+        transition: left 0.3s ease;
+        z-index: 999;
+    }
+
+    /* Menu visible quand classe "active" */
+    .nav-links.active {
+        left: 0;
+    }
+
+    /* Animation du burger en X quand actif */
+    .burger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .burger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* TITRES PLUS PETITS */
+    .hero-name { font-size: 2rem; }
+    .hero-title { font-size: 1.4rem; }
+    .section-title { font-size: 1.8rem; }
+    .about-title,
+    .skills-main-title,
+    .projects-main-title,
+    .contact-main-title {
+        font-size: 2rem;
+    }
+
+    /* HERO mobile */
+    .profile-photo { width: 220px; height: 220px; }
+    .about-photo { width: 220px; height: 220px; }
+
+    /* SECTIONS padding réduit */
+    .services,
+    .timeline-section,
+    .interests-section,
+    .skills-section,
+    .tools-section,
+    .projects-section,
+    .contact-content {
+        padding: 3rem 5%;
+    }
+
+    /* SERVICES en 1 colonne */
+    .services-grid,
+    .interests-grid,
+    .tools-grid,
+    .soft-skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* PROJECTS en 1 colonne */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* FILTRES sur mobile */
+    .filters {
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    /* CONTACT FORM padding réduit */
+    .contact-form-wrapper,
+    .contact-info {
+        padding: 1.8rem 1.2rem;
+    }
+
+    /* TIMELINE compacte */
+    .timeline-content { padding: 1rem; }
+    .timeline-content h3 { font-size: 1.1rem; }
+}
+
+/* ============================================
+   PETIT MOBILE (max 480px)
+   ============================================ */
+@media (max-width: 480px) {
+
+    .hero-name { font-size: 1.7rem; }
+    .hero-title { font-size: 1.2rem; }
+    .section-title { font-size: 1.5rem; }
+    .about-title,
+    .skills-main-title,
+    .projects-main-title,
+    .contact-main-title {
+        font-size: 1.7rem;
+    }
+
+    /* Navbar plus compact */
+    .navbar {
+        padding: 1rem 4%;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    /* Photos plus petites */
+    .profile-photo { width: 180px; height: 180px; }
+    .about-photo { width: 200px; height: 200px; }
+
+    /* Boutons plus petits */
+    .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Filtres en colonne */
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
+}
