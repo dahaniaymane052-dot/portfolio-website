@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez Aymane Dahani - Développeur Web">
+    <title>Contact | Aymane</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ========== HEADER / NAVIGATION ========== -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">Aymane<span>.dev</span></a>
+
+            <button class="burger" id="burger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="skills.html">Compétences</a></li>
+                <li><a href="projects.html">Projets</a></li>
+                <li><a href="contact.html" class="active">Contacter-Moi</a></li>
+            </ul>
+
+            <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">🌙</button>
+        </nav>
+    </header>
+
+    <!-- ========== SECTION CONTACT HERO ========== -->
+    <section class="contact-hero">
+        <p class="hero-greeting">Restons en contact</p>
+        <h1 class="contact-main-title">Contactez-moi</h1>
+        <p class="contact-subtitle">
+            Une question, un projet ou simplement envie de discuter ? 
+            N'hésitez pas à m'envoyer un message !
+        </p>
+    </section>
+
+    <!-- ========== SECTION CONTACT CONTENT ========== -->
+    <section class="contact-content">
+        <div class="contact-wrapper">
+
+            <!-- COORDONNÉES -->
+            <div class="contact-info">
+                <h2 class="contact-info-title">Mes coordonnées</h2>
+                <p class="contact-info-text">
+                    Vous pouvez me joindre via les moyens suivants :
+                </p>
+
+                <div class="info-item">
+                    <div class="info-icon">📧</div>
+                    <div class="info-details">
+                        <h3>Email</h3>
+                        <p>a.dahani3016@uca.ac.ma</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">📱</div>
+                    <div class="info-details">
+                        <h3>Téléphone</h3>
+                        <p>+212 619216302</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-details">
+                        <h3>Localisation</h3>
+                        <p>Marrakech, Maroc</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <h3 class="social-title">Réseaux sociaux</h3>
+                    <div class="social-icons">
+                        <a href="https://github.com/dahaniaymane052-dot" 
+                           target="_blank" 
+                           class="social-link" 
+                           aria-label="GitHub">🔗</a>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORMULAIRE -->
+            <div class="contact-form-wrapper">
+                <h2 class="contact-form-title">Envoyez-moi un message</h2>
+                
+                <form id="contactForm" class="contact-form" novalidate>
+                    
+                    <!-- Nom -->
+                    <div class="form-group">
+                        <label for="name">Nom complet *</label>
+                        <input type="text" id="name" name="name" placeholder="Votre nom">
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="exemple@email.com">
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <!-- Sujet -->
+                    <div class="form-group">
+                        <label for="subject">Sujet *</label>
+                        <input type="text" id="subject" name="subject" placeholder="Objet de votre message">
+                        <span class="error-message" id="subjectError"></span>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Votre message..."></textarea>
+                        <span class="error-message" id="messageError"></span>
+                    </div>
+
+                    <!-- Bouton -->
+                    <button type="submit" class="btn btn-primary submit-btn">
+                        Envoyer le message
+                    </button>
+
+                    <!-- Message de succès -->
+                    <div class="success-message" id="successMessage">
+                        ✅ Votre message a été envoyé avec succès !
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <p>&copy; 2026 Aymane Dahani. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
